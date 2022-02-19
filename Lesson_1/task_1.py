@@ -14,7 +14,6 @@ print(x)
 
 name = input('Please, enter your name: ')
 print("Hi, %s!" % name)
-i = int(input(name + ' please, enter a random number: '))
+i = int(input('Please, enter a random number: '))
 a = i + i * i
-print('Thank you very much. The answer is:')
-print(a)
+print('Thank you very much. The answer is: %d' %a)
