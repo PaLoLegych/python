@@ -3,9 +3,12 @@
 # Для решения используйте цикл while и арифметические операции.
 val = int(input('Please, enter positive value: '))
 max_val = val % 10
-while val > 0:
-    val = val // 10
-    if val > max_val:
-        max_val = val % 10
-        print('The largest digit in %d ' % val + 'is = %d' % max_val)
-        break
+num = val
+while num > 0:
+    dgt = num % 10
+    if dgt > max_val:
+        max_val = dgt
+        if max_val == 9:
+            break
+    num = num // 10
+print(f'The largest digit in {val} is = {max_val}')
