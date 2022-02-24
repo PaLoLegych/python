@@ -3,19 +3,20 @@
 # При нечётном количестве элементов последний сохранить на своём месте.
 # Для заполнения списка элементов нужно использовать функцию input().
 
-list_init = int(input('Please, enter the elements number '))
-my_list1 = []
-i = 0
-# el = 0
-while i < list_init:
-    my_list1.extend(input('Please, enter the element value '))
-    i += 1
-
-print(my_list1)
-
-my_list2 = my_list1
-
-for el in range(int(len(my_list2) / 2)):
-    my_list2[el + 1], my_list2[el] = my_list2[el], my_list2[el + 1]
-    el += 2
-print(my_list2)
+list_init = input('Please, enter the values separated by spaces: ').split()
+print(list_init)
+if len(list_init) % 2 == 0:
+    i = 0
+    while i < len(list_init):
+        el = list_init[i]
+        list_init[i] = list_init[i + 1]
+        list_init[i + 1] = el
+        i += 2
+else:
+    i = 0
+    while i < len(list_init) - 1:
+        el = list_init[i]
+        list_init[i] = list_init[i + 1]
+        list_init[i + 1] = el
+        i += 2
+print(list_init)
