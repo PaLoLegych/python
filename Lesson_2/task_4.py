@@ -3,7 +3,9 @@
 # Если слово длинное, выводить только первые 10 букв в слове.
 
 my_str = input('Please enter some text with spaces between words: ')
-i = 0
-for my_str in my_str:
-    print(i, my_str)
-    i += 1
+value = my_str.split()
+for i, el in enumerate(value):
+    if len(el) > 10:
+        el = el[0:10:1]
+    print(i, el)
+
