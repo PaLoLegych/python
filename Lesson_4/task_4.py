@@ -7,6 +7,11 @@
 
 my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11, 35, 25, 25, 77, 78, 78]
 
-new_list = [i for i in my_list if my_list.count(i) < 2]
+new_list = [i for i in my_list if my_list.count(i) == 1]
 print(new_list)
 
+# result = []
+# for i in my_list:
+#     if my_list.count(i) == 1:
+#         result.append(i)
+# print(result)
