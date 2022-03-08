@@ -1,0 +1,4 @@
+Informatics: 100(л) 50(пр) 20(лаб)
+Physics: 30(л) - 10(лаб)
+Physical: - 30(пр) -
+Literature: 90(л) 50(пр) -
