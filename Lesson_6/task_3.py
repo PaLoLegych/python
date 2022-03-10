@@ -14,21 +14,21 @@ class Worker:
         self.name = name
         self.surname = surname
         self.position = position
-        self._income = {'salary': salary, 'bonus': bonus}
+        self.salary = salary
+        self.bonus = bonus
 
 
 class Position(Worker):
-    def __init__(self, name, surname, position, salary, bonus):
-        super().__init__(name, surname, position, salary, bonus)
 
     def get_full_name(self):
-        return self.name + ' ' + self.surname + ' ' + self.position
+        return self.name + ' ' + self.surname
 
     def get_total_income(self):
-        # self.__income = {'salary': salary, 'bonus': bonus}
-        return self._income.get('salary') + self._income.get('bonus')
+        self._income = {'salary': self.salary, 'bonus': self.bonus}
+        return self.salary + self.bonus
 
 
-val = Position('James', 'Bond', 'Agent', 200000, 120000)
+val = Position('James', 'Bond', 'Agent', 300000, 140000)
+print(val.position)
 print(val.get_full_name())
 print(val.get_total_income())
