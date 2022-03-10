@@ -9,18 +9,21 @@
 # Например: 20 м*5000 м*25 кг*5 см = 12500 т.
 
 class Road:
-    # _length = None
-    # _width = None
-    # weigth = None
-    # tickness = None
 
     def __init__(self, _length, _width):
         self._length = _length
         self._width = _width
 
-    def weigth(self):
-        return self._length * self._width
+    def square(self):
+        square = self._length * self._width / 1000000
+        print(f'Road surface area is: {square} km\u00B2')
+
+    def mass(self, mass_m2=25, tickness=25):
+        mass = self._length * self._width * mass_m2 * tickness / 1000
+        print(f'For the construction of a road with length of {self._length} m. and width of {self._width} m.,\n'
+              f' {mass} tons of asphalt will be required.')
 
 
-r = Road(100, 20)
-print(r. weigth())
+road = Road(15000, 20)
+road.square()
+road.mass()
