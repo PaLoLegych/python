@@ -6,6 +6,7 @@
 # создать экземпляры классов и проверить, что выведет описанный метод для каждого экземпляра.
 
 class Stationary:
+
     def __init__(self, title, pen, pencil, handle):
         self.title = title
         self.pen = pen
@@ -17,8 +18,6 @@ class Stationary:
 
 
 class Pen(Stationary):
-    # def __init__(self, title, pen, pencil, handle):
-    #     super().__init__(title, pen, pencil, handle)
 
     def draw(self):
         if self.pen == True:
@@ -28,8 +27,8 @@ class Pen(Stationary):
 
 
 class Pencil(Stationary):
-    def draw(self):
 
+    def draw(self):
         if self.pencil == True:
             print('The pencil tool is ready. The rendering process is started')
         else:
@@ -37,8 +36,8 @@ class Pencil(Stationary):
 
 
 class Handle(Stationary):
-    def draw(self):
 
+    def draw(self):
         if self.handle == True:
             print('The handle tool is ready. The rendering process is started')
         else:
