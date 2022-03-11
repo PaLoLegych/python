@@ -40,7 +40,7 @@ class TownCar(Car):
     def __init__(self, name, color, speed, is_police):
         super().__init__(name, color, speed, is_police)
 
-    def town_car(self):
+    def show_speed(self):
         if self.speed > 60:
             print('Exceeding the speed limit for moving around the city in 60 km/h. Current speed of', self.name, 'is',
                   self.speed, 'km/h')
@@ -50,13 +50,19 @@ class TownCar(Car):
 
 class SportCar(Car):
 
+    def __init__(self, name, color, speed, is_police):
+        super().__init__(name, color, speed, is_police)
+
     def sport_car(self):
         pass
 
 
 class WorkCar(Car):
 
-    def work_car(self):
+    def __init__(self, name, color, speed, is_police):
+        super().__init__(name, color, speed, is_police)
+
+    def show_speed(self):
         if self.speed > 40:
             print('Exceeding the speed limit for special vehicles for moving around the city in 40 km/h. '
                   'Current speed of', self.name, 'is', self.speed, 'km/h')
@@ -66,7 +72,10 @@ class WorkCar(Car):
 
 class PoliceCar(Car):
 
-    def police_car(self):
+    def __init__(self, name, color, speed, is_police):
+        super().__init__(name, color, speed, is_police)
+
+    def police(self):
         if self.is_police == True:
             print('This', self.name, 'belongs to the police office')
         else:
@@ -81,8 +90,8 @@ print(f'Car {car_a.name} {car_a.go()} then {car_a.turn_left()}, {car_a.stop()}')
 print(f'Car {car_b.name} {car_b.go()} then {car_b.turn_right()}, {car_b.stop()}')
 print(f'Car {car_c.name} {car_c.go()} then {car_c.turn_left()}, {car_c.stop()}')
 print(f'Car {car_d.name} {car_d.go()} then {car_d.turn_left()}, {car_d.stop()}')
-car_a.town_car()
+car_a.show_speed()
 car_b.sport_car()
-car_c.work_car()
-car_d.police_car()
+car_c.show_speed()
+car_d.police()
 print(f'Is {car_a.name} belong to police office?:  {car_a.is_police}')
