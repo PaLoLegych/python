@@ -37,9 +37,6 @@ class Car:
 
 class TownCar(Car):
 
-    def __init__(self, name, color, speed, is_police):
-        super().__init__(name, color, speed, is_police)
-
     def show_speed(self):
         if self.speed > 60:
             print('Exceeding the speed limit for moving around the city in 60 km/h. Current speed of', self.name, 'is',
@@ -50,17 +47,11 @@ class TownCar(Car):
 
 class SportCar(Car):
 
-    def __init__(self, name, color, speed, is_police):
-        super().__init__(name, color, speed, is_police)
-
     def sport_car(self):
         pass
 
 
 class WorkCar(Car):
-
-    def __init__(self, name, color, speed, is_police):
-        super().__init__(name, color, speed, is_police)
 
     def show_speed(self):
         if self.speed > 40:
@@ -71,9 +62,6 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-
-    def __init__(self, name, color, speed, is_police):
-        super().__init__(name, color, speed, is_police)
 
     def police(self):
         if self.is_police:
