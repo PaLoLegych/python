@@ -17,7 +17,7 @@ class Car:
         self.name = name
         self.color = color
         self.speed = speed
-        self.is_police = bool(is_police)
+        self.is_police = is_police
 
     def go(self):
         return f'start moving with the speed {self.speed} km/h'
@@ -76,7 +76,7 @@ class PoliceCar(Car):
         super().__init__(name, color, speed, is_police)
 
     def police(self):
-        if self.is_police == True:
+        if self.is_police:
             print('This', self.name, 'belongs to the police office')
         else:
             print('This', self.name, 'is civilian')
