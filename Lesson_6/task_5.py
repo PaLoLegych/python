@@ -6,25 +6,50 @@
 # создать экземпляры классов и проверить, что выведет описанный метод для каждого экземпляра.
 
 class Stationary:
-    def __init__(self, title):
+    def __init__(self, title, pen, pencil, handle):
         self.title = title
+        self.pen = bool(pen)
+        self.pencil = bool(pencil)
+        self.handle = bool(handle)
 
     def draw(self):
-        print('Start the rendering process.')
+        print('Start the rendering process: ', self.title)
 
 
 class Pen(Stationary):
-    pass
+    # def __init__(self, title, pen, pencil, handle):
+    #     super().__init__(title, pen, pencil, handle)
+
+    def draw(self):
+        if self.pen == True:
+            print('Pen drawing started')
+        else:
+            print('Pen is not available')
 
 
 class Pencil(Stationary):
-    pass
+    def draw(self):
+
+        if self.pencil == True:
+            print('Pencil drawing started')
+        else:
+            print('Pencil is not available')
 
 
 class Handle(Stationary):
-    pass
+    def draw(self):
+
+        if self.handle == True:
+            print('Handle drawing started')
+        else:
+            print('Handle is not available')
 
 
-a = Stationary("Beginning")
-a.draw()
-print(a.draw())
+title = Stationary('Beginning', False, False, False)
+pen = Pen('Beginning', True, False, False)
+pencil = Pencil('Beginning', False, True, False)
+handle = Handle('Beginning', False, False, True)
+title.draw()
+pen.draw()
+pencil.draw()
+handle.draw()
