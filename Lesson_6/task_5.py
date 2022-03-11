@@ -8,9 +8,9 @@
 class Stationary:
     def __init__(self, title, pen, pencil, handle):
         self.title = title
-        self.pen = bool(pen)
-        self.pencil = bool(pencil)
-        self.handle = bool(handle)
+        self.pen = pen
+        self.pencil = pencil
+        self.handle = handle
 
     def draw(self):
         print('Start the rendering process: ', self.title)
@@ -22,33 +22,54 @@ class Pen(Stationary):
 
     def draw(self):
         if self.pen == True:
-            print('Pen drawing started')
+            print('The pen tool is ready. The rendering process is started')
         else:
-            print('Pen is not available')
+            print('The pen tool is not available. Please, choose a different tool.')
 
 
 class Pencil(Stationary):
     def draw(self):
 
         if self.pencil == True:
-            print('Pencil drawing started')
+            print('The pencil tool is ready. The rendering process is started')
         else:
-            print('Pencil is not available')
+            print('The pencil tool is not available. Please, choose a different tool.')
 
 
 class Handle(Stationary):
     def draw(self):
 
         if self.handle == True:
-            print('Handle drawing started')
+            print('The handle tool is ready. The rendering process is started')
         else:
-            print('Handle is not available')
+            print('The handle tool is not available. Please, choose a different tool.')
 
 
+print('Test option 1:')
 title = Stationary('Beginning', False, False, False)
 pen = Pen('Beginning', True, False, False)
 pencil = Pencil('Beginning', False, True, False)
 handle = Handle('Beginning', False, False, True)
+title.draw()
+pen.draw()
+pencil.draw()
+handle.draw()
+
+print('Test option 2:')
+title = Stationary('Beginning', False, False, False)
+pen = Pen('Beginning', True, False, False)
+pencil = Pencil('Beginning', True, False, False)
+handle = Handle('Beginning', False, False, False)
+title.draw()
+pen.draw()
+pencil.draw()
+handle.draw()
+
+print('Test option 3:')
+title = Stationary('Beginning', False, False, False)
+pen = Pen('Beginning', False, False, False)
+pencil = Pencil('Beginning', False, True, False)
+handle = Handle('Beginning', True, False, False)
 title.draw()
 pen.draw()
 pencil.draw()
