@@ -13,39 +13,76 @@
 
 class Car:
 
-    def __init__(self, speed, color, name, is_police):
-        self.speed = speed
-        self.color = color
+    def __init__(self, name, color, speed, is_police):
         self.name = name
+        self.color = color
+        self.speed = speed
         self.is_police = bool(is_police)
 
-    def go(self)
-        pass
+    def go(self):
+        return f'start moving with the speed {self.speed} km/h'
 
     def stop(self):
-        pass
+        return f'slowdown and stop moving'
 
-    def turn(self):
-        pass
+    def turn_left(self):
+        return f'turn left'
+
+    def turn_right(self):
+        return f'turn right'
+
+    def show_speed(self):
+        return f'Current car speed is: {self.speed}'
 
 
 class TownCar(Car):
 
-    def towncar(self):
-        pass
+    def __init__(self, name, color, speed, is_police):
+        super().__init__(name, color, speed, is_police)
+
+    def town_car(self):
+        if self.speed > 60:
+            print('Exceeding the speed limit for moving around the city in 60 km/h. Current speed of', self.name, 'is',
+                  self.speed, 'km/h')
+        else:
+            print('No over-speed detected. The current speed of', self.name, 'is', self.speed, 'km/h')
+
 
 class SportCar(Car):
 
-    def sportcar(self):
+    def sport_car(self):
         pass
+
 
 class WorkCar(Car):
 
-    def workcar(self):
-        pass
+    def work_car(self):
+        if self.speed > 40:
+            print('Exceeding the speed limit for special vehicles for moving around the city in 40 km/h. '
+                  'Current speed of', self.name, 'is', self.speed, 'km/h')
+        else:
+            print('No over-speed detected. The current speed of', self.name, 'is', self.speed, 'km/h')
 
 
 class PoliceCar(Car):
 
-    def policecar(self):
-        pass
+    def police_car(self):
+        if self.is_police == True:
+            print('This', self.name, 'belongs to the police office')
+        else:
+            print('This', self.name, 'is civilian')
+
+
+car_a = TownCar('Mercedes', 'White', 60, False)
+car_b = SportCar('McLaren', 'Dark-red', 240, False)
+car_c = WorkCar('Kamaz', 'Orange', 60, False)
+car_d = PoliceCar('BMW', 'Unknown', 100, True)
+print(f'Car {car_a.name} {car_a.go()} then {car_a.turn_left()}, {car_a.stop()}')
+print(f'Car {car_b.name} {car_b.go()} then {car_b.turn_right()}, {car_b.stop()}')
+print(f'Car {car_c.name} {car_c.go()} then {car_c.turn_left()}, {car_c.stop()}')
+print(f'Car {car_d.name} {car_d.go()} then {car_d.turn_left()}, {car_d.stop()}')
+car_a.town_car()
+car_b.sport_car()
+car_c.work_car()
+car_d.police_car()
+print(f'Is {car_a.name} belong to police office?:  {car_a.is_police}')
