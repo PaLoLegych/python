@@ -45,10 +45,14 @@ class Matrix:
         return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
 
     def __str__(self):
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in self.result]))
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
 
 
 N = int(input('N = '))
+
+# first_matrix = Matrix.__add__.MyMatrix_1 = []
+# print(first_matrix)
+
 M = int(input('M = '))
 
 my_matrix = Matrix([[3, 5, 32],
