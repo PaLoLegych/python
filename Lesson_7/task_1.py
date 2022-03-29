@@ -14,28 +14,28 @@
 
 class Matrix:
 
-    def __init__(self, MyMatrix_1, MyMatrix_2, result):
+    def __init__(self, MyMatrix_1, MyMatrix_2):
         self.MyMatrix_1 = MyMatrix_1
         self.MyMatrix_2 = MyMatrix_2
-        self.result = result
+        # self.result = result
 
     def __add__(self):
 
         result = [[0] * M for i in range(N)]
 
-        self.MyMatrix_1 = []
-        for i in range(N):
-            row = input().split()
-            for i in range(len(row)):
-                row[i] = int(row[i])
-            self.MyMatrix_1.append(row)
-
-        self.MyMatrix_2 = []
-        for i in range(M):
-            row = input().split()
-            for i in range(len(row)):
-                row[i] = int(row[i])
-            self.MyMatrix_2.append(row)
+        # MyMatrix_1 = []
+        # for i in range(N):
+        #     row = input().split()
+        #     for i in range(len(row)):
+        #         row[i] = int(row[i])
+        #     MyMatrix_1.append(row)
+        #
+        # MyMatrix_2 = []
+        # for i in range(M):
+        #     row = input().split()
+        #     for i in range(len(row)):
+        #         row[i] = int(row[i])
+        #     MyMatrix_2.append(row)
 
         for i in range(len(self.MyMatrix_1)):
 
@@ -45,19 +45,17 @@ class Matrix:
         return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
 
     def __str__(self):
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in self.result]))
 
 
 N = int(input('N = '))
 M = int(input('M = '))
 
-# empty_matr = (matr.__add__())
-# n = int(input('Enter a number n: '))
-# total = (self.MyMatrix_1([]))
-# print(total.MyMatrix_1)
-# m = int(input('Enter a number m: '))
-my_matrix = Matrix([])
-# result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-
+my_matrix = Matrix([[3, 5, 32],
+                    [2, 4, 6],
+                    [-1, 64, -8]],
+                   [[-8, 64, -1],
+                    [6, 4, 2],
+                    [32, 5, 3]])
 
 print(my_matrix.__add__())
