@@ -13,39 +13,51 @@
 # с первым элементом первой строки второй матрицы и т.д.
 
 class Matrix:
+
     def __init__(self, MyMatrix_1, MyMatrix_2, result):
         self.MyMatrix_1 = MyMatrix_1
         self.MyMatrix_2 = MyMatrix_2
         self.result = result
 
-    def __add__(self, MyMatrix_1, MyMatrix_2, result):
-        self.result = []
+    def __add__(self):
+
+        result = [[0] * M for i in range(N)]
+
         self.MyMatrix_1 = []
-        for i in range(n):
+        for i in range(N):
             row = input().split()
             for i in range(len(row)):
                 row[i] = int(row[i])
             self.MyMatrix_1.append(row)
 
-            self.MyMatrix_2 = []
-            for i in range(m):
-                row = input().split()
-                for i in range(len(row)):
-                    row[i] = int(row[i])
-                self.MyMatrix_2.append(row)
+        self.MyMatrix_2 = []
+        for i in range(M):
+            row = input().split()
+            for i in range(len(row)):
+                row[i] = int(row[i])
+            self.MyMatrix_2.append(row)
 
-            self.result = [[MyMatrix_1[i][j] + MyMatrix_2[i][j] for j in range(len(MyMatrix_1[0]))] for i in
-                    range(len(MyMatrix_1))]
+        for i in range(len(self.MyMatrix_1)):
+
+            for j in range(len(self.MyMatrix_2[i])):
+                result[i][j] = self.MyMatrix_1[i][j] + self.MyMatrix_2[i][j]
+
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
 
     def __str__(self):
-        pass
-        # result = [[MyMatrix_1[i][j] + MyMatrix_2[i][j] for j in range(len(MyMatrix_1[0]))] for i in range(len(MyMatrix_1))]
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
 
 
-result = n = int(input('Enter a number of row for MyMatrix_1: '))
-m = int(input('Enter a number of row for MyMatrix_2: '))
+N = int(input('N = '))
+M = int(input('M = '))
 
-print(result.__add__)
+# empty_matr = (matr.__add__())
+# n = int(input('Enter a number n: '))
+# total = (self.MyMatrix_1([]))
+# print(total.MyMatrix_1)
+# m = int(input('Enter a number m: '))
+my_matrix = Matrix([])
+# result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-# for r in result:
-#     print(r)
+
+print(my_matrix.__add__())
