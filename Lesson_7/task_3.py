@@ -80,3 +80,4 @@ print('The result of multiplication: ', cells_1 * cells_2)
 print('The result of division: ', cells_1 / cells_2)
 print('Separation of cells:', cells_1.make_order(4))
 print('Separation of cells:', cells_2.make_order(3))
+
