@@ -14,33 +14,33 @@
 
 class Matrix:
 
-    def __init__(self, MyMatrix_1, MyMatrix_2):
-        self.MyMatrix_1 = MyMatrix_1
-        self.MyMatrix_2 = MyMatrix_2
+    def __init__(self, my_matrix_1, my_matrix_2):
+        self.my_matrix_1 = my_matrix_1
+        self.my_matrix_2 = my_matrix_2
         # self.result = result
 
     def __add__(self):
 
         result = [[0] * M for i in range(N)]
 
-        # MyMatrix_1 = []
+        # my_matrix_1 = []
         # for i in range(N):
         #     row = input().split()
         #     for i in range(len(row)):
         #         row[i] = int(row[i])
-        #     MyMatrix_1.append(row)
+        #     my_matrix_1.append(row)
         #
-        # MyMatrix_2 = []
+        # my_matrix_2 = []
         # for i in range(M):
         #     row = input().split()
         #     for i in range(len(row)):
         #         row[i] = int(row[i])
-        #     MyMatrix_2.append(row)
+        #     my_matrix_2.append(row)
 
-        for i in range(len(self.MyMatrix_1)):
+        for i in range(len(self.my_matrix_1)):
 
-            for j in range(len(self.MyMatrix_2[i])):
-                result[i][j] = self.MyMatrix_1[i][j] + self.MyMatrix_2[i][j]
+            for j in range(len(self.my_matrix_2[i])):
+                result[i][j] = self.my_matrix_1[i][j] + self.my_matrix_2[i][j]
 
         return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
 
@@ -50,7 +50,7 @@ class Matrix:
 
 N = int(input('N = '))
 
-# first_matrix = Matrix.__add__.MyMatrix_1 = []
+# first_matrix = Matrix.__add__.my_matrix_1 = []
 # print(first_matrix)
 
 M = int(input('M = '))
