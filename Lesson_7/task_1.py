@@ -42,10 +42,10 @@ class Matrix:
             for j in range(len(self.my_matrix_2[i])):
                 result[i][j] = self.my_matrix_1[i][j] + self.my_matrix_2[i][j]
 
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
+        return '\n'.join('\t'.join(str(j) for j in i) for i in result)
 
     def __str__(self):
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in result]))
+        return '\n'.join('\t'.join(str(j) for j in i) for i in self.result)
 
 
 N = int(input('N = '))
