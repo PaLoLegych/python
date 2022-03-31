@@ -32,7 +32,7 @@ class Coat(Cloth):
         self.cloth_amount_coat = round(self.size / 6.5 + 0.5, 2)
 
     def __str__(self):
-        return f'The amount of cloth for sewing a coat is:\n'\
+        return f'The amount of cloth for sewing a coat is:\n' \
                f' {self.cloth_amount_coat}'
 
 
