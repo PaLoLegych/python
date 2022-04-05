@@ -3,23 +3,27 @@
 #  необходимо только числами. Класс-исключение должен контролировать типы данных элементов списка.
 
 class MyOwnErr:
-    def __init__(self, *args):
+    def __init__(self, value):
+        self.value = value
         self.my_list = []
 
-    def content(self):
+    def content(self, value):
         while True:
             try:
-               value = int(input('Please enter a number: '))
-               self.my_list.append(value)
-               print(f'The current list is: {self.my_list} \n')
-            except:
-                print('This value is not allowed!')
-                choice = input('Would you like to try again? (Y/N)? - ')
+                value = int(input(f'Please enter a number: '))
+                self.my_list.append(value)
+                print(f'The current list is: {self.my_list} \n')
+            finally:
+                if type(value) != int():
+                    print(f'This value is not allowed!')
+
+                choice = input(f'Would you like to try again? (Y/N)? - ')
 
                 if choice == 'Y' or choice == 'y':
-                    print(my_exception.content())
+                    print(my_exception.content(value))
                 elif choice == 'N' or choice == 'n':
-                    print('Exit done.')
+                    print(f'Exit done.')
+
 
 my_exception = MyOwnErr(1)
-print(my_exception.content())
+print(my_exception.content(0))
