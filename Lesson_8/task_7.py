@@ -10,16 +10,16 @@ class ComplexValue:
         self.val = 'a + j * b'
 
     def __add__(self, other):
-        pass
+        print('The result of the addition is: ')
+        return f'val = {self.a + other.a} + {self.b + other.b}*j'
 
     def __mul__(self, other):
-        pass
+        print('The result of the multiplication is: ')
+        return f'val = ({self.a * other.a - self.b * other.b}) + ' \
+               f'({self.a * other.b + self.b * other.a})*j'
 
-    def __str__(self):
-        pass
 
-
-val_1 = ComplexValue(a, b)
-val_2 = ComplexValue(a, b)
+val_1 = ComplexValue(2, 5)
+val_2 = ComplexValue(1, -3)
 print(val_1 + val_2)
 print(val_1 * val_2)
