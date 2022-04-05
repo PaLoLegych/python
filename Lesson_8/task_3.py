@@ -13,10 +13,10 @@ class MyOwnErr:
                 value = int(input(f'Please enter a number: '))
                 self.my_list.append(value)
                 print(f'The current list is: {self.my_list} \n')
-            finally:
+            except:
                 if type(value) != int():
                     print(f'This value is not allowed!')
-
+            else:
                 choice = input(f'Would you like to try again? (Y/N)? - ')
 
                 if choice == 'Y' or choice == 'y':
